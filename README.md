@@ -1,5 +1,5 @@
 # Opiskelijarekisteri
-A Study record desktop application
+A functioning Study record desktop application
 
 Description
 - Coursework I did on my first year for course "user interface programming"
@@ -17,4 +17,4 @@ Configuration / running the app
 - This builds and opens the application
 
 Afterwords
-- As this was a project I did during my first year of studies, there definitely are opportunities left for improvement. 
+- As this was a project I did during the first year of my studies, there are opportunities left for improvement.
