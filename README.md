@@ -1,7 +1,3 @@
-<img width="807" alt="Screenshot 2024-01-26 at 16 36 17" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/6223e441-6454-4843-9adb-3a4baa107e57">
-<img width="805" alt="Screenshot 2024-01-26 at 16 35 41" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/8a276fbf-cc99-48b4-8c2d-516a0e3d819f">
-<img width="805" alt="Screenshot 2024-01-26 at 16 34 16" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/2cc87d4f-09dd-49ae-8e42-884cc1f7e447">
-
 # Opiskelijarekisteri
 A functioning study record desktop application
 
@@ -23,4 +19,8 @@ Configuration / running the app
 Afterwords
 - As this was a project I did during the first year of my studies, there are opportunities left for improvement.
 
+Sample images:
+<img width="807" alt="Screenshot 2024-01-26 at 16 36 17" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/6223e441-6454-4843-9adb-3a4baa107e57">
+<img width="805" alt="Screenshot 2024-01-26 at 16 35 41" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/8a276fbf-cc99-48b4-8c2d-516a0e3d819f">
+<img width="805" alt="Screenshot 2024-01-26 at 16 34 16" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/2cc87d4f-09dd-49ae-8e42-884cc1f7e447">
 
