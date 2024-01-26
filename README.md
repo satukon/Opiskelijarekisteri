@@ -1,5 +1,5 @@
 # Opiskelijarekisteri
-A functioning Study record desktop application
+A functioning study record desktop application
 
 Description
 - Coursework I did on my first year for course "user interface programming"
