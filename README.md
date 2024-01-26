@@ -1,22 +1,22 @@
 # Opiskelijarekisteri
 A functioning student register desktop application
 
-Description
+## Description
 - A solo project, coursework for user interface programming course
 - In this desktop app users can create, read, update and delete information of students, courses and the grades associated
 - A relational database is used to store the data
 
-Technologies used
+## Technologies used
 - Programming language: Java
 - UI development: JavaFX and SceneBuilder
 - Database access: a relational database that is created to memory during initialization (previosly used a MariaDB database in a cloud environment)
 
-Configuration / running the app
+## Configuration / running the app
 - If you have Java, Maven and <a href="https://gluonhq.com/products/scene-builder/">SceneBuilder</a> installed you can run this app easily
 - Run from project root by using command: mvn clean javafx:run
 - This builds and opens the application
 
-Afterwords
+## Afterwords
 - As this was a project I did during the first year of my studies, there are opportunities left for improvement.
 
 Screenshots:
