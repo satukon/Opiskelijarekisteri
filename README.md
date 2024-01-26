@@ -1,5 +1,5 @@
 # Opiskelijarekisteri
-A functioning student register desktop application
+A student register desktop application
 
 ## Description
 - A solo project, coursework for user interface programming course
