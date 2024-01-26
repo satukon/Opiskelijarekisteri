@@ -2,7 +2,7 @@
 A student register desktop application
 
 ## Description
-- A solo project, coursework for user interface programming course
+- A solo project, coursework for my user interface programming course
 - In this desktop app users can create, read, update and delete information of students, courses and the grades associated
 - A relational database is used to store the data
 
