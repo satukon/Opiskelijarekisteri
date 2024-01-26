@@ -12,7 +12,7 @@ Technologies used
 - Database access: memory-based relational database (previosly used a database in a cloud environment)
 
 Configuration / running the app
-- If you have Java, Maven and SceneBuilder installed you can run this app easily
+- If you have Java, Maven and <a href="https://gluonhq.com/products/scene-builder/">SceneBuilder</a> installed you can run this app easily
 - Run from project root by using command: mvn clean javafx:run
 - This builds and opens the application
 
