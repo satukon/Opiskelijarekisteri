@@ -20,7 +20,7 @@ A functioning student register desktop application
 - As this was a project I did during the first year of my studies, there are opportunities left for improvement.
 
 ## Screenshots
-- I've included a few screen shots for the sake of visualisation:
+- I've included a few screen shots for visualisation:
 
 <img width="807" alt="Screenshot 2024-01-26 at 16 36 17" src="https://github.com/satukon/Opiskelijarekisteri/assets/113008423/6223e441-6454-4843-9adb-3a4baa107e57">
 
