@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="primaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.satumaarit.OpiskelijaRekisteriFXMLController">
+   <top>
+      <Pane prefHeight="103.0" prefWidth="770.0" style="-fx-background-color: LIGHTBLUE;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="40.0" layoutY="27.0" text="Opiskelijarekisteri-sovellus" textFill="#006a8a">
+               <font>
+                  <Font name="Ayuthaya" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="72.0" opacity="0.37" text="© Satu Kontinen 2022" textFill="#006a8a">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <VBox prefHeight="569.0" prefWidth="173.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="0.0" prefWidth="100.0" style="-fx-background-color: LIGHTBLUE; -fx-background-radius: 20;">
+               <menus>
+                  <Menu mnemonicParsing="false" text="• Lisää tietoja">
+                     <items>
+                        <MenuItem fx:id="btnAddStudents" mnemonicParsing="false" onAction="#btnAddStudentsClicked" text="Lisää uusi opiskelija" />
+                        <MenuItem fx:id="btnAddCourses" mnemonicParsing="false" onAction="#btnAddCoursesClicked" text="Lisää uusi kurssi" />
+                        <MenuItem fx:id="btnAddGrades" mnemonicParsing="false" onAction="#btnAddGradesClicked" text="Lisää uusi suoritusmerkintä" />
+                     </items>
+                  </Menu>
+               </menus>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="80.0" top="30.0" />
+               </VBox.margin>
+            </MenuBar>
+            <MenuBar prefHeight="48.0" prefWidth="208.0" style="-fx-background-color: LIGHTBLUE; -fx-background-radius: 20;">
+               <menus>
+                  <Menu mnemonicParsing="false" text="• Muokkaa tietoja">
+                     <items>
+                        <MenuItem fx:id="btnEditStudents" mnemonicParsing="false" onAction="#btnEditStudentsClicked" text="Muokkaa opiskelijan tietoja" />
+                        <MenuItem fx:id="btnEditCourses" mnemonicParsing="false" onAction="#btnEditCoursesClicked" text="Muokkaa kurssin tietoja" />
+                        <MenuItem fx:id="btnEditGrades" mnemonicParsing="false" onAction="#btnEditGradesClicked" text="Muokkaa suoritusmerkintää" />
+                     </items>
+                  </Menu>
+               </menus>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="80.0" />
+               </VBox.margin>
+            </MenuBar>
+            <MenuBar prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: LIGHTBLUE; -fx-background-radius: 20;">
+               <menus>
+                  <Menu mnemonicParsing="false" text="• Hae tietoja">
+                     <items>
+                        <MenuItem fx:id="btnGetStudentRecords" mnemonicParsing="false" onAction="#btnGetStudentRecordsClicked" text="Hae opiskelijan suoritusmerkinnät" />
+                        <MenuItem fx:id="btnGetCourseRecords" mnemonicParsing="false" onAction="#btnGetCourseRecordsClicked" text="Hae kurssin suoritusmerkinnät" />
+                     </items>
+                  </Menu>
+               </menus>
+               <padding>
+                  <Insets bottom="10.0" left="22.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="80.0" />
+               </VBox.margin>
+            </MenuBar>
+            <Label fx:id="btnReturn" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#btnReturnClicked" opacity="0.6" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: ALICEBLUE; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #0b697c#0b697c;" text="palaa etusivulle" textFill="#0b697c">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+               </padding>
+            </Label>
+            <Label fx:id="btnQuit" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#btnQuitClicked" opacity="0.6" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: ALICEBLUE; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #0b697c#0b697c;" text="lopeta ohjelma" textFill="#0b697c">
+               <padding>
+                  <Insets bottom="6.0" left="5.0" right="5.0" top="6.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="24.0" right="15.0" top="40.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="539.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="paneStartView" prefHeight="559.0" prefWidth="658.0" visible="false">
+               <children>
+                  <Label layoutX="-10.0" layoutY="37.0" prefHeight="95.0" prefWidth="362.0" text="Tervetuloa käyttämään sovellusta. ">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="22.0" prefHeight="45.0" prefWidth="487.0" text="Tässä sovelluksessa voit hallinnoida ja ylläpitää opiskelijarekisterin tietoja.">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Pane>
+            <Pane fx:id="paneAddStudents" layoutX="-1.0" prefHeight="558.0" prefWidth="657.0" visible="false">
+               <children>
+                  <VBox prefHeight="548.0" prefWidth="646.0">
+                     <children>
+                        <Label text="Syötä uuden opiskelijan tiedot järjestelmään.">
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Etunimi:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin></Label>
+                        <TextField fx:id="txtFieldFirstName" prefHeight="26.0" prefWidth="217.0" promptText="Etunimi">
+                           <VBox.margin>
+                              <Insets bottom="10.0" right="450.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Sukunimi:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin></Label>
+                        <TextField fx:id="txtFieldLastName" prefHeight="26.0" prefWidth="441.0" promptText="Sukunimi">
+                           <VBox.margin>
+                              <Insets bottom="10.0" right="450.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Kaupunki:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin></Label>
+                        <TextField fx:id="txtFieldCity" prefHeight="26.0" prefWidth="441.0" promptText="Kaupunki">
+                           <VBox.margin>
+                              <Insets bottom="10.0" right="450.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Sähköpostiosoite:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin></Label>
+                        <TextField fx:id="txtFieldMail" prefHeight="26.0" prefWidth="441.0" promptText="Esimerkki@Osoite.com">
+                           <VBox.margin>
+                              <Insets bottom="20.0" right="450.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <HBox prefHeight="34.0" prefWidth="218.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="btnAddNewStudent" mnemonicParsing="false" onAction="#btnAddNewStudentClicked" text="Lisää opiskelija" />
+                              <Button fx:id="btnEmptySfields" mnemonicParsing="false" onAction="#btnEmptySfields" text="Tyhjennä kentät" />
+                           </children>
+                           <VBox.margin>
+                              <Insets right="300.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label fx:id="lblShowStudentID" prefHeight="29.0" prefWidth="529.0" visible="false" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane fx:id="paneAddCourses" layoutX="-3.0" layoutY="-2.0" prefHeight="571.0" prefWidth="671.0" visible="false">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <VBox prefHeight="548.0" prefWidth="646.0">
+                     <children>
+                        <Label text="Syötä uuden kurssin tiedot järjestelmään.">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Kurssin nimi:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtFieldCourseName" prefHeight="26.0" prefWidth="268.0" promptText="Kurssin nimi">
+                           <VBox.margin>
+                              <Insets bottom="15.0" right="350.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Opintopisteiden lukumäärä:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="txtFieldPoints" prefHeight="26.0" prefWidth="117.0" promptText="Esim. 5">
+                           <VBox.margin>
+                              <Insets bottom="15.0" right="570.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Kurssin kuvaus:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextArea fx:id="textAreaDescription" prefHeight="103.0" prefWidth="398.0" promptText="Kirjoita kuvaus tähän..." wrapText="true">
+                           <VBox.margin>
+                              <Insets bottom="15.0" right="250.0" />
+                           </VBox.margin>
+                        </TextArea>
+                        <HBox prefHeight="36.0" prefWidth="346.0" spacing="10.0">
+                           <VBox.margin>
+                              <Insets right="300.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button fx:id="btnAddNewCourse" mnemonicParsing="false" onAction="#btnAddNewCourseClicked" text="Lisää kurssi" />
+                              <Button fx:id="btnEmptyCFields" mnemonicParsing="false" onAction="#btnEmptyCFields" text="Tyhjennä kentät" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="lblShowCourseID" prefHeight="27.0" prefWidth="384.0" visible="false">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="lblShowCourseID2" prefHeight="27.0" prefWidth="384.0" visible="false">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane fx:id="paneAddGrades" layoutX="-3.0" layoutY="-3.0" prefHeight="572.0" prefWidth="570.0" visible="false">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <VBox prefHeight="548.0" prefWidth="554.0">
+                     <children>
+                        <Label text="Tallenna uusi suoritusmerkintä opiskelijalle.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Valitse opiskelija, jolle haluat lisätä suorituksen:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxStudents" prefHeight="26.0" prefWidth="259.0" visibleRowCount="8">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Label text="Valitse suoritettu kurssi:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxCourses" prefHeight="26.0" prefWidth="259.0">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Label text="Valitse suorituspäivämäärä:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <DatePicker fx:id="datePicker" prefHeight="26.0" prefWidth="166.0">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <Label text="Valitse arvosana:">
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <RadioButton fx:id="radioBtn5" mnemonicParsing="false" text="5">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gradesGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="radioBtn4" mnemonicParsing="false" text="4" toggleGroup="$gradesGroup">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radioBtn3" mnemonicParsing="false" text="3" toggleGroup="$gradesGroup">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radioBtn2" mnemonicParsing="false" text="2" toggleGroup="$gradesGroup">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radioBtn1" mnemonicParsing="false" text="1" toggleGroup="$gradesGroup">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </RadioButton>
+                        <HBox prefHeight="27.0" prefWidth="254.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="btnAddNewGrade" mnemonicParsing="false" onAction="#btnAddNewGradeClicked" text="Lisää suoritus" />
+                              <Button fx:id="btnEmptyGFields" mnemonicParsing="false" onAction="#btnEmptyGFields" text="Tyhjennä kentät" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" right="300.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label fx:id="lblAddGradeInfo" prefHeight="23.0" prefWidth="483.0" />
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding></VBox>
+               </children>
+            </Pane>
+            <Pane fx:id="paneEditStudents" prefHeight="543.0" prefWidth="570.0" visible="false">
+               <children>
+                  <Label text="Muokkaa opiskelijan tietoja.">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="34.0" text="Valitse opiskelija, jonka tietoja haluat muokata:">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="chooseStudent" layoutY="53.0" onAction="#studentSelected" prefHeight="26.0" prefWidth="286.0" promptText=" " visibleRowCount="8" />
+                  <Pane fx:id="paneShowEditableStudent" layoutY="135.0" prefHeight="383.0" prefWidth="506.0">
+                     <children>
+                        <Label layoutY="46.0" text="Opiskelijan etunimi:" />
+                        <TextField fx:id="textFieldFirstName" disable="true" layoutY="63.0" prefHeight="26.0" prefWidth="201.0" />
+                        <Label layoutY="94.0" text="Opiskelijan sukunimi:" />
+                        <TextField fx:id="textFieldLastName" disable="true" layoutY="111.0" prefHeight="26.0" prefWidth="201.0" />
+                        <Label layoutY="142.0" text="Kaupunki:" />
+                        <TextField fx:id="textFieldCity" disable="true" layoutY="159.0" prefHeight="26.0" prefWidth="200.0" />
+                        <Label layoutY="190.0" text="Sähköpostiosoite:" />
+                        <TextField fx:id="textFieldMail" disable="true" layoutY="207.0" prefHeight="26.0" prefWidth="201.0" />
+                        <Button fx:id="btnCancelEditStudent" layoutX="136.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnCancelEditStudentClicked" text="Peruuta" />
+                        <Button fx:id="btnSaveStudentChanges" layoutX="-1.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnSaveStudentChanges" text="Tallenna muutokset" />
+                        <Label layoutX="-1.0" layoutY="-1.0" text="Opiskelijan id:" />
+                        <TextField fx:id="textFieldStudentId" disable="true" editable="false" layoutY="17.0" prefHeight="26.0" prefWidth="76.0" />
+                        <Label fx:id="lblEditStudentInfo" layoutX="-1.0" layoutY="247.0" text="Jos muokkasit tietoja, tallenna muutokset lopuksi tästä:" />
+                        <Label fx:id="lblEditStudentInfo2" layoutY="293.0" prefHeight="17.0" prefWidth="209.0" text="Muutokset tallennettiin." visible="false" />
+                        <Button fx:id="btnDeleteStudent" layoutX="-1.0" layoutY="339.0" mnemonicParsing="false" onAction="#btnDeleteStudentClicked" text="Poista tiedot" />
+                        <Label fx:id="lblDeleteStudentInfo" layoutY="366.0" text="Tiedot poistettiin." visible="false" />
+                        <Label layoutX="-1.0" layoutY="321.0" text="Poistaaksesi opiskelijan järjestelmästä, paina tästä:" />
+                        <Button fx:id="btnEditStudent" layoutX="132.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnEditStudentClicked" text="Muokkaa" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="paneEditCourses" layoutX="-4.0" layoutY="-4.0" prefHeight="524.0" prefWidth="540.0" visible="false">
+               <children>
+                  <VBox prefHeight="492.0" prefWidth="557.0">
+                     <children>
+                        <Label text="Muokkaa kurssin tietoja.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Valitse kurssi, jonka tietoja haluat muokata:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="chooseCourse" onAction="#courseSelected" prefHeight="26.0" prefWidth="293.0">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Pane fx:id="paneShowEditableCourse" prefHeight="413.0" prefWidth="553.0">
+                           <children>
+                              <Label text="Kurssin id:" />
+                              <TextField fx:id="textFieldCourseId" disable="true" layoutY="17.0" prefHeight="26.0" prefWidth="92.0" />
+                              <Label layoutY="53.0" text="Kurssin nimi:" />
+                              <TextField fx:id="textFieldCourseName" disable="true" layoutY="70.0" prefHeight="26.0" prefWidth="283.0" />
+                              <Label layoutY="101.0" text="Opintopisteet:" />
+                              <TextField fx:id="textFieldPoints" disable="true" layoutY="118.0" prefHeight="26.0" prefWidth="95.0" />
+                              <Label layoutY="149.0" text="Kurssin kuvaus:" />
+                              <TextArea fx:id="textAreaCourseDescription" disable="true" layoutY="166.0" prefHeight="92.0" prefWidth="285.0" wrapText="true" />
+                              <Label layoutY="268.0" text="Jos muokkasit tietoja, tallenna muutokset:" />
+                              <Button fx:id="btnSaveCourseChanges" layoutY="286.0" mnemonicParsing="false" onAction="#btnSaveCourseChangesClicked" text="Tallenna muutokset" />
+                              <Button fx:id="btnEditCourse" layoutX="214.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnEditCourseClicked" text="Muokkaa" />
+                              <Button fx:id="btnCancelEditCourse" layoutX="142.0" layoutY="286.0" mnemonicParsing="false" onAction="#btnCancelEditCourseClicked" text="Peruuta" />
+                              <Label fx:id="lblEditCourseInfo" layoutX="1.0" layoutY="313.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="418.0" text="Muutokset tallennettiin." visible="false" />
+                              <Label fx:id="lblCourseDeletedInfo" layoutX="-1.0" layoutY="380.0" text="Tiedot poistettiin." visible="false" />
+                              <Button fx:id="btnDeleteCourse" layoutY="354.0" mnemonicParsing="false" onAction="#btnDeleteCourseClicked" text="Poista tiedot" />
+                              <Label layoutX="-1.0" layoutY="336.0" text="Poistaaksesi kurssin järjestelmästä, paina tästä:" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane fx:id="paneStudentRecords" layoutX="-1.0" layoutY="-1.0" prefHeight="549.0" prefWidth="554.0" visible="false">
+               <children>
+                  <VBox layoutY="-2.0" prefHeight="93.0" prefWidth="428.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="277.0" text="Hae ote opiskelijan kurssisuorituksista.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="15.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Valitse opiskelija:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="comboBoxSelectStudent" onAction="#comboBoxSelectStudentClicked" prefHeight="26.0" prefWidth="291.0" visibleRowCount="8">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </VBox>
+                  <Pane fx:id="paneStudetsGradesList" layoutY="111.0" prefHeight="308.0" prefWidth="483.0" />
+                  <Label fx:id="lblStudentRecordsInfo" layoutY="91.0" text="Ote opiskelijan suorituksista:" visible="false">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lblShowKA" layoutX="2.0" layoutY="425.0" prefHeight="22.0" prefWidth="305.0" text="Opiskelijan keskiarvo on:" visible="false">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lblShowOP" layoutX="3.0" layoutY="447.0" prefHeight="17.0" prefWidth="311.0" text="Suoritetut opintopisteet:" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="paneCourseRecords" layoutX="-3.0" layoutY="-4.0" prefHeight="521.0" prefWidth="536.0" visible="false">
+               <children>
+                  <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="85.0" prefWidth="477.0">
+                     <children>
+                        <Label text="Hae ote kurssin suoritusmerkinnöistä:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="15.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Valitse kurssi:">
+                           <padding>
+                              <Insets bottom="3.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="comboBoxSelectCourse" onAction="#comboBoxSelectCourseClicked" prefHeight="26.0" prefWidth="266.0" />
+                     </children>
+                  </VBox>
+                  <Pane fx:id="paneCourseGradesList" layoutY="113.0" prefHeight="392.0" prefWidth="484.0" visible="false" />
+                  <Label fx:id="lblCourseRecordsInfo" layoutX="-1.0" layoutY="96.0" text="Ote kurssin suorituksista:" visible="false">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="paneEditGrades" layoutX="-3.0" layoutY="-3.0" prefHeight="551.0" prefWidth="569.0" visible="false">
+               <children>
+                  <VBox prefHeight="87.0" prefWidth="460.0">
+                     <children>
+                        <Label text="Muokkaa opiskelijan suoritusmerkintää.">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="15.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Valitse opiskelija, jonka suoritusmerkintää haluat muokata:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="selectStudentToEdit" onAction="#selectStudentToEditClicked" prefHeight="26.0" prefWidth="321.0" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="lblSelectGradeInfo" layoutY="92.0" text="Valitse muokattava suoritusmerkintä listalta:">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <VBox fx:id="paneShowEditableGrade" layoutY="266.0" prefHeight="272.0" prefWidth="464.0">
+                     <children>
+                        <Label fx:id="lblsuorituspvm" text="Suorituspäivämäärä:">
+                           <padding>
+                              <Insets bottom="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <HBox prefHeight="35.0" prefWidth="395.0">
+                           <children>
+                              <DatePicker fx:id="datePicker2" disable="true" prefHeight="26.0" prefWidth="193.0">
+                                 <HBox.margin>
+                                    <Insets right="45.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                           </children>
+                        </HBox>
+                        <Label text="Arvosana:">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="23.0" prefWidth="267.0">
+                           <children>
+                              <RadioButton fx:id="radioButton5" disable="true" mnemonicParsing="false" text="5">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gradeGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButton4" disable="true" mnemonicParsing="false" text="4" toggleGroup="$gradeGroup">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButton3" disable="true" mnemonicParsing="false" text="3" toggleGroup="$gradeGroup">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButton2" disable="true" mnemonicParsing="false" text="2" toggleGroup="$gradeGroup">
+                                 <HBox.margin>
+                                    <Insets right="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="radioButton1" disable="true" mnemonicParsing="false" text="1" toggleGroup="$gradeGroup">
+                                 <HBox.margin>
+                                    <Insets right="40.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <Button fx:id="btnEditGrade" mnemonicParsing="false" onAction="#btnEditGradeClicked" text="Muokkaa">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnCancelEditGrade" mnemonicParsing="false" onAction="#btnCancelEditGradeClicked" text="Peruuta" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label fx:id="lbltest" prefHeight="15.0" prefWidth="458.0" text="Jos muokkasit tietoja, tallenna muutokset lopuksi tästä:">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="btnSaveEditedGrade" mnemonicParsing="false" onAction="#btnSaveEditedGradeClicked" text="Tallenna muutokset">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label fx:id="lbllGradeSavedInfo" text="Muutokset tallennettiin." visible="false">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Jos haluat poistaa tämän suoritusmerkinnän, paina tästä:">
+                           <VBox.margin>
+                              <Insets bottom="2.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="btnDeleteGrade" mnemonicParsing="false" onAction="#btnDeleteGradeClicked" text="Poista suoritusmerkintä">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label fx:id="lblGradeDeletedInfo" text="Suoritusmerkintä poistettiin." visible="false" />
+                     </children>
+                  </VBox>
+                  <Pane fx:id="paneShowGradeList" layoutY="111.0" prefHeight="150.0" prefWidth="494.0">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="60.0" top="40.0" />
+         </BorderPane.margin>
+      </Pane>
+   </center>
+</BorderPane>
