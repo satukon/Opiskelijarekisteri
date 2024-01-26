@@ -17,4 +17,4 @@ Configuration / running the app
 - This builds and opens the application
 
 Afterwords
-- As this was a project I did during my first year of studies, there definitely are opportunities for improvement. However, it is a functioning app.
+- As this was a project I did during my first year of studies, there definitely are opportunities left for improvement. 
