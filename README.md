@@ -9,7 +9,7 @@ Description
 Technologies used
 - Programming language: Java
 - UI development: JavaFX and SceneBuilder
-- Database access: relational database created to memory (previosly used a database in a cloud environment)
+- Database access: a relational database that is created to memory during initialization (previosly used a MariaDB database in a cloud environment)
 
 Configuration / running the app
 - If you have Java, Maven and <a href="https://gluonhq.com/products/scene-builder/">SceneBuilder</a> installed you can run this app easily
