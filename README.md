@@ -2,7 +2,7 @@
 A functioning study record desktop application
 
 Description
-- Coursework I did on my first year for course "user interface programming"
+- A solo project, coursework for "user interface programming" course
 - In this desktop app users can create, read, update and delete information of students, courses and the grades associated
 - A relational database is used to store the data
 
