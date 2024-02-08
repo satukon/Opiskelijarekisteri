@@ -1,8 +1,8 @@
 # Opiskelijarekisteri
-A student register desktop application
+A desktop application that performs CRUD-operations between UI and database. 
 
 ## Description
-- A solo project, coursework for a user interface programming course
+- This is a solo project and my coursework for my user interface programming course
 - In this desktop app users can create, read, update and delete information of students, courses and the gradings associated
 - A relational database is used to store the data
 
