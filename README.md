@@ -16,7 +16,7 @@ A desktop application that performs CRUD-operations between UI and database.
 - This builds and opens the application
 
 ## Afterwords
-- As this was a project I did during the first year of my studies, there are opportunities left for improvement. This is what I could do after studying computer science for only 1/2 years. =)
+- As this was a project I did during the first year of my studies, there are opportunities left for improvement. This is what I could do after studying computer science for only 0.5 years. =)
 
 ## Screenshots
 - I've included a few screen shots for visualisation:
