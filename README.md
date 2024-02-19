@@ -3,8 +3,7 @@ A desktop application that performs CRUD-operations between UI and database.
 
 ## Description
 - This is a solo project and my coursework for my user interface programming course
-- In this desktop app users can create, read, update and delete information of students, courses and the gradings associated
-- A relational database is used to store the data
+- In this desktop app users can create, read, update and delete information of students, courses and the gradings associated. A relational database is used to store the data.
 
 ## Technologies used
 - Programming language: Java
@@ -17,7 +16,7 @@ A desktop application that performs CRUD-operations between UI and database.
 - This builds and opens the application
 
 ## Afterwords
-- As this was a project I did during the first year of my studies, there are opportunities left for improvement.
+- As this was a project I did during the first year of my studies, there are opportunities left for improvement. This is what I could do after studying computer science for only 1/2 years. =)
 
 ## Screenshots
 - I've included a few screen shots for visualisation:
